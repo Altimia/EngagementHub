@@ -2,7 +2,11 @@ from .models import SphereOfInfluence, EngagementDashboard, CommunitiesOfPractic
 
 # Views for each new model go here
 
+from django.http import JsonResponse
+from .models import DatabaseManagementSystem
+
 # View for Database Management System
 def database_management_system_view(request):
-    # Code for the view goes here
-    pass
+    if request.method == 'GET':
+        dbms = DatabaseManagementSystem.objects.all().values()
+        return JsonResponse(list(dbms), safe=False)
