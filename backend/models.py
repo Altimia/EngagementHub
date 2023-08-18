@@ -26,4 +26,8 @@ class RiskAssessmentTool(models.Model):
     # Fields for Risk Assessment Tool go here
 
 class DatabaseManagementSystem(models.Model):
-    # Fields for Database Management System go here
+    organization_name = models.CharField(max_length=200)
+    contact_person = models.CharField(max_length=200)
+    visits = models.IntegerField(default=0)
+    MOUs = models.TextField()
+    cooperation_type = models.CharField(max_length=200)
