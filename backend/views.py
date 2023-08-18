@@ -2,7 +2,8 @@ from .models import SphereOfInfluence, EngagementDashboard, CommunitiesOfPractic
 # View for Search Functionality
 def search_functionality_view(request):
     if request.method == 'GET':
-        search = SearchFunctionality.objects.all().values()
+        search_term = request.GET.get('search_term', '')
+        search = SearchFunctionality.objects.filter(search_term__icontains=search_term).values()
         return JsonResponse(list(search), safe=False)
 
 from django.http import JsonResponse

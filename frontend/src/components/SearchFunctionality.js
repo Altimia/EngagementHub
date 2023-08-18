@@ -11,9 +11,11 @@ class SearchFunctionality extends React.Component {
         this.setState({ searchTerm: event.target.value });
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        // Call the API to search and update state with results
+        const response = await fetch(`/api/search?search_term=${this.state.searchTerm}`);
+        const results = await response.json();
+        this.setState({ searchResults: results });
     }
 
     render() {
