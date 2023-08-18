@@ -24,3 +24,6 @@ class IntegrationExtension(models.Model):
 
 class RiskAssessmentTool(models.Model):
     # Fields for Risk Assessment Tool go here
+
+class DatabaseManagementSystem(models.Model):
+    # Fields for Database Management System go here
