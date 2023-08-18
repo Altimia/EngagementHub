@@ -7,6 +7,7 @@ import SearchFunctionality from './components/SearchFunctionality';
 import EmailCommunication from './components/EmailCommunication';
 import UserAccessPermission from './components/UserAccessPermission';
 import IntegrationExtension from './components/IntegrationExtension';
+import DatabaseManagementSystem from './components/DatabaseManagementSystem';
 
 class App extends React.Component {
   render() {
@@ -21,6 +22,7 @@ class App extends React.Component {
         <EmailCommunication />
         <UserAccessPermission />
         <IntegrationExtension />
+        <DatabaseManagementSystem />
       </div>
     );
   }
