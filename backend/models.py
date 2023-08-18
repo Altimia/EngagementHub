@@ -9,9 +9,9 @@ class CommunitiesOfPractice(models.Model):
 
 class VisualizationTool(models.Model):
     # Fields for Visualization Tools go here
-
 class SearchFunctionality(models.Model):
-    # Fields for Search Functionality go here
+    search_term = models.CharField(max_length=200)
+    search_results = models.TextField()
 
 class EmailCommunication(models.Model):
     # Fields for Email and Communication Module go here

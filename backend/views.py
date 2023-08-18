@@ -1,6 +1,9 @@
 from .models import SphereOfInfluence, EngagementDashboard, CommunitiesOfPractice, VisualizationTool, SearchFunctionality, EmailCommunication, UserAccessPermission, IntegrationExtension, DatabaseManagementSystem
-
-# Views for each new model go here
+# View for Search Functionality
+def search_functionality_view(request):
+    if request.method == 'GET':
+        search = SearchFunctionality.objects.all().values()
+        return JsonResponse(list(search), safe=False)
 
 from django.http import JsonResponse
 from .models import DatabaseManagementSystem
