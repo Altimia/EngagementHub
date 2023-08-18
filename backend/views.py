@@ -1,3 +1,3 @@
-from .models import Organization, Contact, Visit, MOU, Cooperation, Relationship, Engagement, Report, User, Role, Department, RiskAssessment
+from .models import SphereOfInfluence, EngagementDashboard, CommunitiesOfPractice, VisualizationTool, SearchFunctionality, EmailCommunication, UserAccessPermission, IntegrationExtension
 
-# Views for each model go here
+# Views for each new model go here
