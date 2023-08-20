@@ -15,7 +15,10 @@ class CommunitiesOfPractice(models.Model):
     # Fields for Communities of Practice Portal go here
 
 class VisualizationTool(models.Model):
-    # Fields for Visualization Tools go here
+    staff_name = models.CharField(max_length=200)
+    organization_name = models.CharField(max_length=200)
+    relationship_type = models.CharField(max_length=200)
+    relationship_strength = models.IntegerField()
 class SearchFunctionality(models.Model):
     search_term = models.CharField(max_length=200)
     search_results = models.TextField()

@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-class VisualizationTool extends React.Component {
-  render() {
-    return (
-      <div>
-        {/* Code for the Visualization Tools feature goes here */}
-      </div>
-    );
-  }
+function VisualizationTool() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/visualizations')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []);
+
+  return (
+    <div>
+      {data.map((item, index) => (
+        <div key={index}>
+          <h2>{item.staff_name}</h2>
+          <p>Organization Name: {item.organization_name}</p>
+          <p>Relationship Type: {item.relationship_type}</p>
+          <p>Relationship Strength: {item.relationship_strength}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default VisualizationTool;

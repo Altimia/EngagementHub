@@ -1,4 +1,4 @@
-from .models import SphereOfInfluence, EngagementDashboard, CommunitiesOfPractice, VisualizationTool, SearchFunctionality, EmailCommunication, UserAccessPermission, IntegrationExtension, DatabaseManagementSystem
+from .models import SphereOfInfluence, EngagementDashboard, CommunitiesOfPractice, VisualizationTool, SearchFunctionality, EmailCommunication, UserAccessPermission, IntegrationExtension, DatabaseManagementSystem, VisualizationTool
 
 # View for Sphere of Influence
 def sphere_of_influence_view(request):
@@ -21,8 +21,8 @@ def search_functionality_view(request):
 from django.http import JsonResponse
 from .models import DatabaseManagementSystem
 
-# View for Database Management System
-def database_management_system_view(request):
+# View for Visualization Tool
+def visualization_tool_view(request):
     if request.method == 'GET':
-        dbms = DatabaseManagementSystem.objects.all().values()
-        return JsonResponse(list(dbms), safe=False)
+        visualizations = VisualizationTool.objects.all().values()
+        return JsonResponse(list(visualizations), safe=False)
