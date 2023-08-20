@@ -1,5 +1,11 @@
 from .models import SphereOfInfluence, EngagementDashboard, CommunitiesOfPractice, VisualizationTool, SearchFunctionality, EmailCommunication, UserAccessPermission, IntegrationExtension, DatabaseManagementSystem
 
+# View for Sphere of Influence
+def sphere_of_influence_view(request):
+    if request.method == 'GET':
+        spheres = SphereOfInfluence.objects.all().values()
+        return JsonResponse(list(spheres), safe=False)
+
 # View for Engagement Dashboard
 def engagement_dashboard_view(request):
     if request.method == 'GET':

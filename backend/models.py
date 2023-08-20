@@ -1,5 +1,9 @@
 class SphereOfInfluence(models.Model):
-    # Fields for Sphere of Influence Tracker go here
+    staff_name = models.CharField(max_length=200)
+    contact_name = models.CharField(max_length=200)
+    contact_organization = models.CharField(max_length=200)
+    last_contact_date = models.DateField()
+    notes = models.TextField()
 
 class EngagementDashboard(models.Model):
     organization_name = models.CharField(max_length=200)
