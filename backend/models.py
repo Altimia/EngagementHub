@@ -2,7 +2,10 @@ class SphereOfInfluence(models.Model):
     # Fields for Sphere of Influence Tracker go here
 
 class EngagementDashboard(models.Model):
-    # Fields for Engagement Dashboard go here
+    organization_name = models.CharField(max_length=200)
+    engagement_type = models.CharField(max_length=200)
+    engagement_date = models.DateField()
+    engagement_details = models.TextField()
 
 class CommunitiesOfPractice(models.Model):
     # Fields for Communities of Practice Portal go here

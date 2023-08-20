@@ -1,4 +1,10 @@
 from .models import SphereOfInfluence, EngagementDashboard, CommunitiesOfPractice, VisualizationTool, SearchFunctionality, EmailCommunication, UserAccessPermission, IntegrationExtension, DatabaseManagementSystem
+
+# View for Engagement Dashboard
+def engagement_dashboard_view(request):
+    if request.method == 'GET':
+        engagements = EngagementDashboard.objects.all().values()
+        return JsonResponse(list(engagements), safe=False)
 # View for Search Functionality
 def search_functionality_view(request):
     if request.method == 'GET':
