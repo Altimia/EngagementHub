@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import VisitRegistration from './VisitRegistration';
+import PostVisitReport from './PostVisitReport';
 class CommunitiesOfPractice extends Component {
   state = {
     communities: [],
@@ -32,17 +33,7 @@ class CommunitiesOfPractice extends Component {
       </div>
     );
   }
-}class VisitRegistration extends Component {
-  // Implementation of VisitRegistration component goes here
 }
-
-class PostVisitReport extends Component {
-  // Implementation of PostVisitReport component goes here
-}
-
-import VisitRegistration from './VisitRegistration';
-import PostVisitReport from './PostVisitReport';
-
 class CommunitiesOfPractice extends Component {
   state = {
     communities: []
