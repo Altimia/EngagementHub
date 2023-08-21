@@ -45,3 +45,13 @@ class DatabaseManagementSystem(models.Model):
     visits = models.IntegerField(default=0)
     MOUs = models.TextField()
     cooperation_type = models.CharField(max_length=200)
+class VisitRegistration(models.Model):
+    community = models.ForeignKey(CommunitiesOfPractice, on_delete=models.CASCADE)
+    visitor_name = models.CharField(max_length=200)
+    visit_date = models.DateField()
+    visit_details = models.TextField()
+
+class PostVisitReport(models.Model):
+    visit = models.ForeignKey(VisitRegistration, on_delete=models.CASCADE)
+    report_date = models.DateField()
+    report_details = models.TextField()

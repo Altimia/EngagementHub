@@ -30,4 +30,26 @@ class CommunitiesOfPractice extends Component {
       </div>
     );
   }
+}class VisitRegistration extends Component {
+  // Implementation of VisitRegistration component goes here
+}
+
+class PostVisitReport extends Component {
+  // Implementation of PostVisitReport component goes here
+}
+
+class CommunitiesOfPractice extends Component {
+  // Existing implementation of CommunitiesOfPractice component
+
+  // Add VisitRegistration and PostVisitReport components
+  render() {
+    return (
+      <div>
+        {/* Existing code for displaying community data */}
+        
+        <VisitRegistration />
+        <PostVisitReport />
+      </div>
+    );
+  }
 }

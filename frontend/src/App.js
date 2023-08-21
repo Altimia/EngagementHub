@@ -29,3 +29,18 @@ class App extends React.Component {
 }
 
 export default App;
+import VisitRegistration from './components/VisitRegistration';
+import PostVisitReport from './components/PostVisitReport';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        {/* Existing components */}
+        
+        <VisitRegistration />
+        <PostVisitReport />
+      </div>
+    );
+  }
+}
