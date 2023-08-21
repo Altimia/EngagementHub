@@ -14,7 +14,8 @@ class PostVisitReport extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // Handle form submission here
+    console.log(this.state);
+    // Replace the above line with actual form submission logic
   }
 
   render() {
