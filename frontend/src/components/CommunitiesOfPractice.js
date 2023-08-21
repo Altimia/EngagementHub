@@ -3,14 +3,16 @@ import axios from 'axios';
 
 class CommunitiesOfPractice extends Component {
   state = {
-    communities: []
+    communities: [],
+    loading: true
   }
 
   componentDidMount() {
     axios.get('http://localhost:8000/api/communities_of_practice/')
       .then(res => {
         this.setState({
-          communities: res.data
+          communities: res.data,
+          loading: false
         });
       })
   }

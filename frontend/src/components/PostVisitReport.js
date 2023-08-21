@@ -14,13 +14,17 @@ class PostVisitReport extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    axios.post('http://localhost:8000/api/post_visit_report/', this.state)
-      .then(res => {
-        console.log(res.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    if (this.state.visit && this.state.report_date && this.state.report_details) {
+      axios.post('http://localhost:8000/api/post_visit_report/', this.state)
+        .then(res => {
+          console.log(res.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    } else {
+      alert('All fields are required!');
+    }
   }
 
   render() {

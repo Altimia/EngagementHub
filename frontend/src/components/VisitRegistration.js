@@ -15,13 +15,17 @@ class VisitRegistration extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    axios.post('http://localhost:8000/api/visit_registration/', this.state)
-      .then(res => {
-        console.log(res.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    if (this.state.community && this.state.visitor_name && this.state.visit_date && this.state.visit_details) {
+      axios.post('http://localhost:8000/api/visit_registration/', this.state)
+        .then(res => {
+          console.log(res.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    } else {
+      alert('All fields are required!');
+    }
   }
 
   render() {
