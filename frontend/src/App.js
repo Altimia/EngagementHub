@@ -8,6 +8,8 @@ import EmailCommunication from './components/EmailCommunication';
 import UserAccessPermission from './components/UserAccessPermission';
 import IntegrationExtension from './components/IntegrationExtension';
 import DatabaseManagementSystem from './components/DatabaseManagementSystem';
+import VisitRegistration from './components/VisitRegistration';
+import PostVisitReport from './components/PostVisitReport';
 
 class App extends React.Component {
   render() {
@@ -23,24 +25,11 @@ class App extends React.Component {
         <UserAccessPermission />
         <IntegrationExtension />
         <DatabaseManagementSystem />
-      </div>
-    );
-  }
-}
-
-export default App;
-import VisitRegistration from './components/VisitRegistration';
-import PostVisitReport from './components/PostVisitReport';
-
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        {/* Existing components */}
-        <CommunitiesOfPractice />
         <VisitRegistration />
         <PostVisitReport />
       </div>
     );
   }
 }
+
+export default App;
