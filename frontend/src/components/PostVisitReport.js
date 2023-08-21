@@ -14,8 +14,13 @@ class PostVisitReport extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
-    // Replace the above line with actual form submission logic
+    axios.post('http://localhost:8000/api/post_visit_report/', this.state)
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   render() {
