@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 
-class CommunitiesOfPractice extends React.Component {
+class CommunitiesOfPractice extends Component {
+  state = {
+    communities: []
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:8000/api/communities_of_practice/')
+      .then(res => {
+        this.setState({
+          communities: res.data
+        });
+      })
+  }
+
   render() {
     return (
       <div>
-        {/* Code for the Communities of Practice Portal feature goes here */}
+        {this.state.communities.map(community => (
+          <div key={community.id}>
+            <h2>{community.community_name}</h2>
+            <p>{community.community_description}</p>
+            <p>Members: {community.community_members.join(', ')}</p>
+            <p>Resources: {community.community_resources}</p>
+            <p>Discussions: {community.community_discussions}</p>
+          </div>
+        ))}
       </div>
     );
   }
 }
-
-export default CommunitiesOfPractice;

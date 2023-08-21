@@ -19,7 +19,12 @@ def search_functionality_view(request):
         return JsonResponse(list(search), safe=False)
 
 from django.http import JsonResponse
-from .models import DatabaseManagementSystem
+
+# View for Communities of Practice
+def communities_of_practice_view(request):
+    if request.method == 'GET':
+        communities = CommunitiesOfPractice.objects.all().values()
+        return JsonResponse(list(communities), safe=False)
 
 # View for Visualization Tool
 def visualization_tool_view(request):

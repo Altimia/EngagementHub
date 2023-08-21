@@ -12,7 +12,11 @@ class EngagementDashboard(models.Model):
     engagement_details = models.TextField()
 
 class CommunitiesOfPractice(models.Model):
-    # Fields for Communities of Practice Portal go here
+    community_name = models.CharField(max_length=200)
+    community_description = models.TextField()
+    community_members = models.ManyToManyField(User)
+    community_resources = models.TextField()
+    community_discussions = models.TextField()
 
 class VisualizationTool(models.Model):
     staff_name = models.CharField(max_length=200)
