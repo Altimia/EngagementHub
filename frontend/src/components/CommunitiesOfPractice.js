@@ -9,6 +9,7 @@ class CommunitiesOfPractice extends Component {
   }
 
   componentDidMount() {
+    this.setState({ loading: true });
     axios.get('http://localhost:8000/api/communities_of_practice/')
       .then(res => {
         this.setState({
@@ -16,9 +17,17 @@ class CommunitiesOfPractice extends Component {
           loading: false
         });
       })
+      .catch(error => {
+        console.error(error);
+        this.setState({ loading: false });
+      });
   }
 
   render() {
+    if (this.state.loading) {
+      return <div>Loading...</div>;
+    }
+
     return (
       <div>
         {this.state.communities.map(community => (

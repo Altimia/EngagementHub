@@ -37,7 +37,7 @@ class App extends React.Component {
     return (
       <div>
         {/* Existing components */}
-        
+        <CommunitiesOfPractice />
         <VisitRegistration />
         <PostVisitReport />
       </div>
