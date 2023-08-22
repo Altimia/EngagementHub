@@ -31,3 +31,8 @@ def visualization_tool_view(request):
     if request.method == 'GET':
         visualizations = VisualizationTool.objects.all().values()
         return JsonResponse(list(visualizations), safe=False)
+# View for User Access & Permissions System
+def user_access_permission_view(request):
+    if request.method == 'GET':
+        permissions = UserAccessPermission.objects.all().values()
+        return JsonResponse(list(permissions), safe=False)

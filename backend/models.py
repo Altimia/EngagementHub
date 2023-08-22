@@ -35,7 +35,9 @@ class EmailCommunication(models.Model):
     sent_date = models.DateTimeField(auto_now_add=True)
 
 class UserAccessPermission(models.Model):
-    # Fields for User Access & Permissions System go here
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    role = models.CharField(max_length=200)
+    permissions = models.TextField()
 
 class IntegrationExtension(models.Model):
     # Fields for Integration & Extension Interface go here
