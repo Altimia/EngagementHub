@@ -13,6 +13,7 @@ import PostVisitReport from './components/PostVisitReport';
 
 class App extends React.Component {
   render() {
+    const isAdmin = // Add logic here to check if the current user is an administrator
     return (
       <div>
         {/* Components for each feature go here */}
@@ -22,7 +23,7 @@ class App extends React.Component {
         <VisualizationTool />
         <SearchFunctionality />
         <EmailCommunication />
-        <UserAccessPermission />
+        {isAdmin && <UserAccessPermission />}
         <IntegrationExtension />
         <DatabaseManagementSystem />
         <VisitRegistration />

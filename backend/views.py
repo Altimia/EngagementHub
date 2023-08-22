@@ -34,5 +34,8 @@ def visualization_tool_view(request):
 # View for User Access & Permissions System
 def user_access_permission_view(request):
     if request.method == 'GET':
-        permissions = UserAccessPermission.objects.all().values()
-        return JsonResponse(list(permissions), safe=False)
+        if request.user.is_superuser:  # Check if the user is an administrator
+            permissions = UserAccessPermission.objects.all().values()
+            return JsonResponse(list(permissions), safe=False)
+        else:
+            return JsonResponse({'error': 'Unauthorized access'}, status=401)
