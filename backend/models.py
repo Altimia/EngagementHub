@@ -40,9 +40,6 @@ class UserAccessPermission(models.Model):
 class IntegrationExtension(models.Model):
     # Fields for Integration & Extension Interface go here
 
-class RiskAssessmentTool(models.Model):
-    # Fields for Risk Assessment Tool go here
-
 class DatabaseManagementSystem(models.Model):
     organization_name = models.CharField(max_length=200)
     contact_person = models.CharField(max_length=200)
