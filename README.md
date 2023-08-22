@@ -30,9 +30,6 @@ Email and Communication Module:
 Automated email generation for workflows.
 Store and retrieve visit reports.
 
-Risk Assessment Tool:
-Evaluate potential partnerships for risk factors.
-
 User Access & Permissions System:
 Control portal access by role or department.
 Display potential engagement opportunities.
