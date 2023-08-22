@@ -7,7 +7,18 @@ function EmailCommunication() {
   const [message, setMessage] = useState('');
 
   const sendEmail = () => {
-    // Code to send email goes here
+    axios.post('/api/send-email', {
+      sender,
+      recipient,
+      subject,
+      message
+    })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.error(error);
+    });
   };
 
   return (
