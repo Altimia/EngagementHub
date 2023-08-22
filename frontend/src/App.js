@@ -12,8 +12,17 @@ import VisitRegistration from './components/VisitRegistration';
 import PostVisitReport from './components/PostVisitReport';
 
 class App extends React.Component {
+  state = {
+    isAdmin: false
+  }
+
+  componentDidMount() {
+    fetch('/api/current_user')
+      .then(response => response.json())
+      .then(data => this.setState({ isAdmin: data.is_admin }));
+  }
+
   render() {
-    const isAdmin = // Add logic here to check if the current user is an administrator
     return (
       <div>
         {/* Components for each feature go here */}
@@ -23,7 +32,7 @@ class App extends React.Component {
         <VisualizationTool />
         <SearchFunctionality />
         <EmailCommunication />
-        {isAdmin && <UserAccessPermission />}
+        {this.state.isAdmin && <UserAccessPermission />}
         <IntegrationExtension />
         <DatabaseManagementSystem />
         <VisitRegistration />

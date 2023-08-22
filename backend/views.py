@@ -39,3 +39,11 @@ def user_access_permission_view(request):
             return JsonResponse(list(permissions), safe=False)
         else:
             return JsonResponse({'error': 'Unauthorized access'}, status=401)
+
+# View for Current User
+def current_user_view(request):
+    if request.method == 'GET':
+        if request.user.is_authenticated:
+            return JsonResponse({'is_admin': request.user.is_superuser})
+        else:
+            return JsonResponse({'is_admin': False})
