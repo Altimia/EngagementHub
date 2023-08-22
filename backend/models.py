@@ -28,7 +28,11 @@ class SearchFunctionality(models.Model):
     search_results = models.TextField()
 
 class EmailCommunication(models.Model):
-    # Fields for Email and Communication Module go here
+    sender = models.EmailField()
+    recipient = models.EmailField()
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+    sent_date = models.DateTimeField(auto_now_add=True)
 
 class UserAccessPermission(models.Model):
     # Fields for User Access & Permissions System go here
