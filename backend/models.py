@@ -1,3 +1,4 @@
+from django.db import models
 class SphereOfInfluence(models.Model):
     staff_name = models.CharField(max_length=200)
     contact_name = models.CharField(max_length=200)
