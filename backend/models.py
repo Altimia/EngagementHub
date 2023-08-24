@@ -39,9 +39,6 @@ class UserAccessPermission(models.Model):
     role = models.CharField(max_length=200)
     permissions = models.TextField()
 
-class IntegrationExtension(models.Model):
-    # Fields for Integration & Extension Interface go here
-
 class DatabaseManagementSystem(models.Model):
     organization_name = models.CharField(max_length=200)
     contact_person = models.CharField(max_length=200)
